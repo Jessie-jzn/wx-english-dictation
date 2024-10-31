@@ -1,26 +1,256 @@
 .practice {
   padding: 24px;
+  background: #f6f6f6;
+  min-height: 100vh;
 
   .audio-section {
-    margin-bottom: 32px;
-  }
+    margin: 32px 0;
 
-  .input-section {
-    margin-bottom: 24px;
+    .audio-progress {
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      margin-bottom: 24px;
 
-    .dictation-input {
-      width: 100%;
-      height: 80px;
-      background: #fff;
-      border-radius: 8px;
-      padding: 16px;
-      box-sizing: border-box;
+      .time-text {
+        font-size: 24px;
+        color: #666;
+        min-width: 60px;
+      }
+
+      .progress-slider {
+        flex: 1;
+        margin: 0 16px;
+      }
+    }
+
+    .audio-controls {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: center;
+
+      .play-btn {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: #07c160;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+
+        &.playing {
+          background: #ff4d4f;
+        }
+      }
+
+      .speed-toggle {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: #f0f0f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        
+        &:active {
+          opacity: 0.8;
+        }
+
+        &.slow {
+          background: #e6f7ff;
+        }
+
+        .turtle-icon {
+          width: 40px;
+          height: 40px;
+        }
+      }
     }
   }
 
-  .submit-btn {
-    width: 100%;
+  .input-section {
+    margin: 32px 0;
+    padding: 0 24px;
+
+    .dictation-input {
+      width: 100%;
+      height: 100px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 16px;
+      font-size: 28px;
+      box-sizing: border-box;
+    }
+
+    .check-result {
+      margin: 24px;
+      padding: 16px;
+      border-radius: 8px;
+      text-align: center;
+      
+      &.correct {
+        background: #f6ffed;
+      }
+      
+      &.wrong {
+        background: #fff1f0;
+      }
+
+      .result-text {
+        font-size: 32px;
+        font-weight: bold;
+        
+        .correct & {
+          color: #52c41a;
+        }
+        
+        .wrong & {
+          color: #ff4d4f;
+        }
+      }
+    }
+  }
+
+  .control-section {
+    margin: 24px 0;
+
+    .auto-play {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      padding: 24px;
+      border-radius: 12px;
+      
+      Text {
+        font-size: 28px;
+        color: #333;
+      }
+    }
+  }
+
+  .answer-section {
+    margin: 24px;
+    padding: 24px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    .correct-answer,
+    .translation {
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .label {
+        color: #666;
+        font-size: 26px;
+        margin-right: 8px;
+      }
+
+      .text {
+        color: #333;
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 1.5;
+      }
+    }
+
+    .translation {
+      padding-top: 16px;
+      border-top: 1px solid #f0f0f0;
+
+      .text {
+        color: #666;
+      }
+    }
+  }
+
+  .button-group {
+    display: flex;
+    gap: 16px;
+    margin-top: 48px;
+    padding: 0 24px;
+
+    .check-btn,
+    .show-answer-btn,
+    .next-btn {
+      flex: 1;
+      height: 88px;
+      border-radius: 44px;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .check-btn {
+      background: #07c160;
+      color: #fff;
+    }
+
+    .show-answer-btn {
+      background: #1890ff;
+      color: #fff;
+    }
+
+    .next-btn {
+      background: #07c160;
+      color: #fff;
+    }
+  }
+
+  .next-btn {
+    width: calc(100% - 48px);
+    margin: 48px 24px 0;
+    height: 88px;
     background: #07c160;
     color: #fff;
+    font-size: 32px;
+    border-radius: 44px;
+
+    &:active {
+      opacity: 0.8;
+    }
   }
+
+  .stats-bar {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 24px;
+    background: #fff;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+      .label {
+        font-size: 24px;
+        color: #666;
+        margin-bottom: 4px;
+      }
+      
+      .value {
+        font-size: 28px;
+        color: #333;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.error-text {
+  color: #ff4d4f;
+  font-size: 24px;
+  margin-top: 16px;
+  text-align: center;
 }

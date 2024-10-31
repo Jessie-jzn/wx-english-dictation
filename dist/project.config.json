@@ -1,9 +1,9 @@
 {
   "miniprogramRoot": "",
-  "cloudfunctionRoot": "cloud/functions/",
   "projectname": "wx-english-dictation",
   "description": "英语听写练习小程序",
-  "appid": "wx46180e27943b18fc",
+  "appid": "wxb189d5284d64971c",
+  "cloudbaseRoot": "cloudfunctions/",
   "setting": {
     "urlCheck": true,
     "es6": false,

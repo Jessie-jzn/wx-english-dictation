@@ -14,18 +14,29 @@ declare module '*.styl';
 declare namespace NodeJS {
   interface ProcessEnv {
     TARO_ENV: 'weapp' | 'swan' | 'alipay' | 'h5' | 'rn' | 'tt' | 'quickapp' | 'qq' | 'jd'
+    CLOUD_ENV_ID: string
   }
 }
 
+// 补充微信小程序的类型声明
 declare namespace WechatMiniprogram {
+  interface Cloud {
+    init: (config: {
+      env: string;
+      traceUser?: boolean;
+    }) => void;
+    database: () => any;
+    callFunction: (params: {
+      name: string;
+      data?: any;
+    }) => Promise<{
+      result: any;
+      errMsg: string;
+    }>;
+  }
+
   interface Wx {
-    cloud: {
-      init: (config: {
-        env: string;
-        traceUser?: boolean;
-      }) => void;
-      database: () => any;
-    };
+    cloud: Cloud;
   }
 }
 

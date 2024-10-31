@@ -18,11 +18,13 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "resolveJsonModule": true,
-    "typeRoots": ["node_modules/@types"],
-    "paths": {
-      "@/*": ["./src/*"]
-    },
-    "esModuleInterop": true
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "types": [
+      "node",
+      "webpack-env"
+    ]
   },
   "include": ["./src", "./types"],
   "compileOnSave": false

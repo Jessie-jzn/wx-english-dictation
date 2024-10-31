@@ -27,11 +27,11 @@ var Index = function Index() {
   var _useStore = (0,_store__WEBPACK_IMPORTED_MODULE_2__.useStore)(),
     sentenceStore = _useStore.sentenceStore;
   (0,_tarojs_taro__WEBPACK_IMPORTED_MODULE_0__.useLoad)(function () {
-    sentenceStore.fetchSentences();
+    sentenceStore.fetchAudioList();
   });
-  var handleSentenceClick = function handleSentenceClick(id) {
+  var handleSentenceClick = function handleSentenceClick(audioId) {
     (0,_tarojs_taro__WEBPACK_IMPORTED_MODULE_0__.navigateTo)({
-      url: "/pages/practice/index?id=".concat(id)
+      url: "/pages/practice/index?id=".concat(audioId)
     });
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__.View, {
@@ -47,26 +47,26 @@ var Index = function Index() {
       children: "\u52A0\u8F7D\u4E2D..."
     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__.View, {
       className: "sentence-list",
-      children: sentenceStore.sentences.map(function (sentence) {
+      children: sentenceStore.audioList.map(function (audio) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__.View, {
           className: "sentence-item",
           onClick: function onClick() {
-            return handleSentenceClick(sentence._id);
+            return handleSentenceClick(audio.audioClip._id);
           },
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__.View, {
             className: "sentence-text",
-            children: sentence.text
+            children: audio.sentence.text
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__.View, {
             className: "sentence-info",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__.Text, {
               className: "level",
-              children: ["\u96BE\u5EA6: ", sentence.level]
+              children: ["\u96BE\u5EA6: ", audio.sentence.level]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__.Text, {
               className: "category",
-              children: sentence.category
+              children: audio.sentence.category
             })]
           })]
-        }, sentence._id);
+        }, audio.audioClip._id);
       })
     })]
   });

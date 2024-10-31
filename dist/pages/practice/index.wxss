@@ -1,26 +1,221 @@
-/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[2]!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[4]!./src/pages/practice/index.scss ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[2]!./node_modules/resolve-url-loader/index.js!./node_modules/@tarojs/webpack5-runner/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[0].use[4]!./src/pages/practice/index.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 .practice {
   padding: 24rpx;
+  background: #f6f6f6;
+  min-height: 100vh;
 }
 .practice .audio-section {
-  margin-bottom: 32rpx;
+  margin: 32rpx 0;
+}
+.practice .audio-section .audio-progress {
+  display: flex;
+  align-items: center;
+  padding: 0 24rpx;
+  margin-bottom: 24rpx;
+}
+.practice .audio-section .audio-progress .time-text {
+  font-size: 24rpx;
+  color: #666;
+  min-width: 60rpx;
+}
+.practice .audio-section .audio-progress .progress-slider {
+  flex: 1;
+  margin: 0 16rpx;
+}
+.practice .audio-section .audio-controls {
+  display: flex;
+  gap: 16rpx;
+  align-items: center;
+  justify-content: center;
+}
+.practice .audio-section .audio-controls .play-btn {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background: #07c160;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+}
+.practice .audio-section .audio-controls .play-btn.playing {
+  background: #ff4d4f;
+}
+.practice .audio-section .audio-controls .speed-toggle {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.practice .audio-section .audio-controls .speed-toggle:active {
+  opacity: 0.8;
+}
+.practice .audio-section .audio-controls .speed-toggle.slow {
+  background: #e6f7ff;
+}
+.practice .audio-section .audio-controls .speed-toggle .turtle-icon {
+  width: 40rpx;
+  height: 40rpx;
 }
 .practice .input-section {
-  margin-bottom: 24rpx;
+  margin: 32rpx 0;
+  padding: 0 24rpx;
 }
 .practice .input-section .dictation-input {
   width: 100%;
-  height: 80rpx;
+  height: 100rpx;
   background: #fff;
-  border-radius: 8rpx;
+  border-radius: 12rpx;
   padding: 16rpx;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  font-size: 28rpx;
+  box-sizing: border-box;
 }
-.practice .submit-btn {
-  width: 100%;
+.practice .input-section .check-result {
+  margin: 24rpx;
+  padding: 16rpx;
+  border-radius: 8rpx;
+  text-align: center;
+}
+.practice .input-section .check-result.correct {
+  background: #f6ffed;
+}
+.practice .input-section .check-result.wrong {
+  background: #fff1f0;
+}
+.practice .input-section .check-result .result-text {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.correct .practice .input-section .check-result .result-text {
+  color: #52c41a;
+}
+.wrong .practice .input-section .check-result .result-text {
+  color: #ff4d4f;
+}
+.practice .control-section {
+  margin: 24rpx 0;
+}
+.practice .control-section .auto-play {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 24rpx;
+  border-radius: 12rpx;
+}
+.practice .control-section .auto-play Text {
+  font-size: 28rpx;
+  color: #333;
+}
+.practice .answer-section {
+  margin: 24rpx;
+  padding: 24rpx;
+  background: #fff;
+  border-radius: 12rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+.practice .answer-section .correct-answer,
+.practice .answer-section .translation {
+  margin-bottom: 16rpx;
+}
+.practice .answer-section .correct-answer:last-child,
+.practice .answer-section .translation:last-child {
+  margin-bottom: 0;
+}
+.practice .answer-section .correct-answer .label,
+.practice .answer-section .translation .label {
+  color: #666;
+  font-size: 26rpx;
+  margin-right: 8rpx;
+}
+.practice .answer-section .correct-answer .text,
+.practice .answer-section .translation .text {
+  color: #333;
+  font-size: 28rpx;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.practice .answer-section .translation {
+  padding-top: 16rpx;
+  border-top: 1rpx solid #f0f0f0;
+}
+.practice .answer-section .translation .text {
+  color: #666;
+}
+.practice .button-group {
+  display: flex;
+  gap: 16rpx;
+  margin-top: 48rpx;
+  padding: 0 24rpx;
+}
+.practice .button-group .check-btn,
+.practice .button-group .show-answer-btn,
+.practice .button-group .next-btn {
+  flex: 1;
+  height: 88rpx;
+  border-radius: 44rpx;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.practice .button-group .check-btn {
   background: #07c160;
   color: #fff;
+}
+.practice .button-group .show-answer-btn {
+  background: #1890ff;
+  color: #fff;
+}
+.practice .button-group .next-btn {
+  background: #07c160;
+  color: #fff;
+}
+.practice .next-btn {
+  width: calc(100% - 48rpx);
+  margin: 48rpx 24rpx 0;
+  height: 88rpx;
+  background: #07c160;
+  color: #fff;
+  font-size: 32rpx;
+  border-radius: 44rpx;
+}
+.practice .next-btn:active {
+  opacity: 0.8;
+}
+.practice .stats-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 16rpx 24rpx;
+  background: #fff;
+  margin-bottom: 24rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+.practice .stats-bar .stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.practice .stats-bar .stat-item .label {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 4rpx;
+}
+.practice .stats-bar .stat-item .value {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: bold;
+}
+.error-text {
+  color: #ff4d4f;
+  font-size: 24rpx;
+  margin-top: 16rpx;
+  text-align: center;
 }

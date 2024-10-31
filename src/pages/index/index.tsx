@@ -9,12 +9,12 @@ const Index: React.FC = () => {
   const { sentenceStore } = useStore()
 
   useLoad(() => {
-    sentenceStore.fetchSentences()
+    sentenceStore.fetchAudioList()
   })
 
-  const handleSentenceClick = (id: string) => {
+  const handleSentenceClick = (audioId: string) => {
     navigateTo({
-      url: `/pages/practice/index?id=${id}`
+      url: `/pages/practice/index?id=${audioId}`
     })
   }
 
@@ -28,16 +28,16 @@ const Index: React.FC = () => {
         <View className='loading'>加载中...</View>
       ) : (
         <View className='sentence-list'>
-          {sentenceStore.sentences.map(sentence => (
+          {sentenceStore.audioList.map(audio => (
             <View
-              key={sentence._id}
+              key={audio.audioClip._id}
               className='sentence-item'
-              onClick={() => handleSentenceClick(sentence._id)}
+              onClick={() => handleSentenceClick(audio.audioClip._id)}
             >
-              <View className='sentence-text'>{sentence.text}</View>
+              <View className='sentence-text'>{audio.sentence.text}</View>
               <View className='sentence-info'>
-                <Text className='level'>难度: {sentence.level}</Text>
-                <Text className='category'>{sentence.category}</Text>
+                <Text className='level'>难度: {audio.sentence.level}</Text>
+                <Text className='category'>{audio.sentence.category}</Text>
               </View>
             </View>
           ))}
