@@ -3,7 +3,7 @@
   "projectname": "wx-english-dictation",
   "description": "英语听写练习小程序",
   "appid": "wxb189d5284d64971c",
-  "cloudbaseRoot": "cloudfunctions/",
+  "cloudfunctionRoot": "cloudfunctions/",
   "setting": {
     "urlCheck": true,
     "es6": false,

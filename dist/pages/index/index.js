@@ -24,6 +24,7 @@
 
 
 var Index = function Index() {
+  var _sentenceStore$audioL;
   var _useStore = (0,_store__WEBPACK_IMPORTED_MODULE_2__.useStore)(),
     sentenceStore = _useStore.sentenceStore;
   (0,_tarojs_taro__WEBPACK_IMPORTED_MODULE_0__.useLoad)(function () {
@@ -47,7 +48,7 @@ var Index = function Index() {
       children: "\u52A0\u8F7D\u4E2D..."
     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__.View, {
       className: "sentence-list",
-      children: sentenceStore.audioList.map(function (audio) {
+      children: sentenceStore === null || sentenceStore === void 0 || (_sentenceStore$audioL = sentenceStore.audioList) === null || _sentenceStore$audioL === void 0 ? void 0 : _sentenceStore$audioL.map(function (audio) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_tarojs_components__WEBPACK_IMPORTED_MODULE_4__.View, {
           className: "sentence-item",
           onClick: function onClick() {

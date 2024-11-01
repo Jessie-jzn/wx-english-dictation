@@ -27,6 +27,7 @@
 
 
 var Practice = function Practice() {
+  var _sentenceStore$audioL3;
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState2 = (0,_Users_jessie_chen_project_wx_english_dictation_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_4__["default"])(_useState, 2),
     userInput = _useState2[0],
@@ -71,8 +72,9 @@ var Practice = function Practice() {
   // 加载数据
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     sentenceStore.fetchAudioList().then(function () {
+      var _sentenceStore$audioL;
       // 确保有数据后设置第一题
-      if (sentenceStore.audioList.length > 0) {
+      if (((_sentenceStore$audioL = sentenceStore.audioList) === null || _sentenceStore$audioL === void 0 ? void 0 : _sentenceStore$audioL.length) > 0) {
         sentenceStore.setCurrentAudio(sentenceStore.audioList[0]);
       }
     });
@@ -215,7 +217,8 @@ var Practice = function Practice() {
 
   // 下一题
   var nextQuestion = function nextQuestion() {
-    if (!sentenceStore.currentAudio || sentenceStore.audioList.length === 0) {
+    var _sentenceStore$audioL2;
+    if (!sentenceStore.currentAudio || ((_sentenceStore$audioL2 = sentenceStore.audioList) === null || _sentenceStore$audioL2 === void 0 ? void 0 : _sentenceStore$audioL2.length) === 0) {
       _tarojs_taro__WEBPACK_IMPORTED_MODULE_1___default().showToast({
         title: '没有更多题目了',
         icon: 'none',
@@ -251,7 +254,7 @@ var Practice = function Practice() {
           children: "\u5F53\u524D\u9898\u76EE"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_tarojs_components__WEBPACK_IMPORTED_MODULE_5__.Text, {
           className: "value",
-          children: [sentenceStore.currentIndex + 1, "/", sentenceStore.audioList.length]
+          children: [sentenceStore.currentIndex + 1, "/", (_sentenceStore$audioL3 = sentenceStore.audioList) === null || _sentenceStore$audioL3 === void 0 ? void 0 : _sentenceStore$audioL3.length]
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_tarojs_components__WEBPACK_IMPORTED_MODULE_5__.View, {
         className: "stat-item",

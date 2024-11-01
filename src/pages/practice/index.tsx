@@ -24,7 +24,7 @@ const Practice: React.FC = () => {
   useEffect(() => {
     sentenceStore.fetchAudioList().then(() => {
       // 确保有数据后设置第一题
-      if (sentenceStore.audioList.length > 0) {
+      if (sentenceStore.audioList?.length > 0) {
         sentenceStore.setCurrentAudio(sentenceStore.audioList[0]);
       }
     });
@@ -177,7 +177,7 @@ const Practice: React.FC = () => {
 
   // 下一题
   const nextQuestion = () => {
-    if (!sentenceStore.currentAudio || sentenceStore.audioList.length === 0) {
+    if (!sentenceStore.currentAudio || sentenceStore.audioList?.length === 0) {
       Taro.showToast({
         title: '没有更多题目了',
         icon: 'none',
@@ -208,7 +208,7 @@ const Practice: React.FC = () => {
       <View className="stats-bar">
         <View className="stat-item">
           <Text className="label">当前题目</Text>
-          <Text className="value">{sentenceStore.currentIndex + 1}/{sentenceStore.audioList.length}</Text>
+          <Text className="value">{sentenceStore.currentIndex + 1}/{sentenceStore.audioList?.length}</Text>
         </View>
         <View className="stat-item">
           <Text className="label">已答题数</Text>

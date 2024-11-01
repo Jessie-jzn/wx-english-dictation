@@ -30,7 +30,7 @@ class SentenceStore {
     try {
       const list = await this.dataService.getSentenceList()
       this.audioList = list
-      if (!this.currentAudio && list.length > 0) {
+      if (!this.currentAudio && list?.length > 0) {
         this.currentAudio = list[0]
         this.currentIndex = 0
       }
@@ -46,7 +46,7 @@ class SentenceStore {
 
   nextSentence() {
     const nextIndex = this.currentIndex + 1
-    if (nextIndex < this.audioList.length) {
+    if (nextIndex < this.audioList?.length) {
       this.currentIndex = nextIndex
       this.currentAudio = this.audioList[nextIndex]
     } else {

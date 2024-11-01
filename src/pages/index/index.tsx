@@ -28,7 +28,7 @@ const Index: React.FC = () => {
         <View className='loading'>加载中...</View>
       ) : (
         <View className='sentence-list'>
-          {sentenceStore.audioList.map(audio => (
+          {sentenceStore?.audioList?.map(audio => (
             <View
               key={audio.audioClip._id}
               className='sentence-item'
